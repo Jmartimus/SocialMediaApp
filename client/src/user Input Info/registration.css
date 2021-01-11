@@ -1,0 +1,36 @@
+/*color scheme: #2BAE66FF - Green, #FCF6F5FF - Gray*/
+
+/*#background {
+  background-image: url('/https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'), linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5));
+}
+*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid rgb(241, 241, 241);
+    border-right: 3px solid rgb(241, 241, 241);
+    border-bottom: 3px solid rgb(241, 241, 241);
+    border-left: 3px solid rgb(241, 241, 241);
+    margin: 2em 20em 2em 20em;
+    border-radius: 25px;
+    position: absolute;
+}
+.headers {
+  display: flex;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: #2bae66FF;
+    padding: 15px 0 0px 0;
+}
+.registerButton {
+  margin: 20px 0 20px 0;
+}
+#registrationImage {
+  max-height: 100vh;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+}

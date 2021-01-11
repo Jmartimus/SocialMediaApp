@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './registration.css';
 
 export const RegistrationForm = () => {
   const [inputs, setInputs] = useState({
@@ -13,8 +14,9 @@ export const RegistrationForm = () => {
     console.log(inputs);
   }
   return (
-    <div>
-        <h1>First Name</h1>
+    <body id="background">
+      <div className="wrapper">
+        <label className="headers">First Name</label>
         <input
           value={inputs.firstName}
           onChange={(e) => {
@@ -24,7 +26,7 @@ export const RegistrationForm = () => {
           id="firstname"
           placeholder="Enter first name"
         />
-        <h1>Last Name</h1>
+        <label className="headers">Last Name</label>
         <input
           value={inputs.lastName}
           onChange={(e) => {
@@ -34,7 +36,7 @@ export const RegistrationForm = () => {
           id="lastname"
           placeholder="Enter last name"
         />
-        <h1>Email Address</h1>
+        <label className="headers">Email Address</label>
         <input
           value={inputs.email}
           onChange={(e) => {
@@ -44,8 +46,9 @@ export const RegistrationForm = () => {
           id="email"
           placeholder="Enter email"
         />
-        <h1>UserName</h1>
-        <input value={inputs.username}
+        <label className="headers">UserName</label>
+        <input
+          value={inputs.username}
           onChange={(e) => {
             setInputs({ ...inputs, username: e.target.value });
           }}
@@ -53,8 +56,9 @@ export const RegistrationForm = () => {
           id="username"
           placeholder="Enter username"
         />
-        <h1>Password</h1>
-        <input value={inputs.password}
+        <label className="headers">Password</label>
+        <input
+          value={inputs.password}
           onChange={(e) => {
             setInputs({ ...inputs, password: e.target.value });
           }}
@@ -62,7 +66,10 @@ export const RegistrationForm = () => {
           id="password"
           placeholder="Enter password"
         />
-        <button onClick={submitForm}>Register</button>
-    </div>
+        <button className="registerButton" onClick={submitForm}>
+          Create Account
+        </button>
+      </div>
+    </body>
   );
 };
