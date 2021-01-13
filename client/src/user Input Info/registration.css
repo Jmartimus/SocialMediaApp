@@ -1,36 +1,47 @@
 /*color scheme: #2BAE66FF - Green, #FCF6F5FF - Gray*/
+/*work on the font of the window*/
 
-/*#background {
-  background-image: url('/https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'), linear-gradient(to bottom, rgba(255,255,0,0.5), rgba(0,0,255,0.5));
+#background {
+  /*work on getting a different gradient*/
+  
+  background-image: linear-gradient(to top left, transparent, #2bae66FF), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'); 
+  background-position: center;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
 }
-*/
+
 .wrapper {
   display: flex;
   flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border-top: 3px solid rgb(241, 241, 241);
-    border-right: 3px solid rgb(241, 241, 241);
-    border-bottom: 3px solid rgb(241, 241, 241);
-    border-left: 3px solid rgb(241, 241, 241);
-    margin: 2em 20em 2em 20em;
-    border-radius: 25px;
-    position: absolute;
+    border: 3px solid black;
+    margin: 6em 20em 2em 20em;
+    border-radius: 5px;
+    background-color: white;
+    
 }
-.headers {
-  display: flex;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
-    color: #2bae66FF;
-    padding: 15px 0 0px 0;
+
+.input {
+  border-radius: 5px;
+  border:1px solid black;
+  margin: 10px 0 10px 0;
+  font-family: 'Patrick Hand', cursive;
 }
+
 .registerButton {
-  margin: 20px 0 20px 0;
+  margin: 10px 0 10px 0;
+  border-radius: 5px;
+  border:1px solid black;
+  background-color: #2bae66FF;
+  color: white;
+  font-family: 'Balsamiq Sans', cursive;
 }
-#registrationImage {
-  max-height: 100vh;
-  max-width: 100%;
-  margin: auto;
-  position: relative;
-}
+
+

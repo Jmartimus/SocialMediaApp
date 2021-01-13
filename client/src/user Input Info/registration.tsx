@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './registration.css';
 
+//make an option for sign-in and sign-up on the same page.  
+//It will only switch the middle window.
+
 export const RegistrationForm = () => {
   const [inputs, setInputs] = useState({
     firstName: '',
@@ -16,55 +19,59 @@ export const RegistrationForm = () => {
   return (
     <body id="background">
       <div className="wrapper">
-        <label className="headers">First Name</label>
         <input
+          className="input"
           value={inputs.firstName}
           onChange={(e) => {
             setInputs({ ...inputs, firstName: e.target.value });
           }}
           type="firstname"
           id="firstname"
-          placeholder="Enter first name"
+          placeholder="First name"
         />
-        <label className="headers">Last Name</label>
+
         <input
+          className="input"
           value={inputs.lastName}
           onChange={(e) => {
             setInputs({ ...inputs, lastName: e.target.value });
           }}
           type="lastname"
           id="lastname"
-          placeholder="Enter last name"
+          placeholder="Last name"
         />
-        <label className="headers">Email Address</label>
+
         <input
+          className="input"
           value={inputs.email}
           onChange={(e) => {
             setInputs({ ...inputs, email: e.target.value });
           }}
           type="email"
           id="email"
-          placeholder="Enter email"
+          placeholder="Email Address"
         />
-        <label className="headers">UserName</label>
+
         <input
+          className="input"
           value={inputs.username}
           onChange={(e) => {
             setInputs({ ...inputs, username: e.target.value });
           }}
           type="username"
           id="username"
-          placeholder="Enter username"
+          placeholder="Username"
         />
-        <label className="headers">Password</label>
+
         <input
+          className="input"
           value={inputs.password}
           onChange={(e) => {
             setInputs({ ...inputs, password: e.target.value });
           }}
           type="password"
           id="password"
-          placeholder="Enter password"
+          placeholder="Password"
         />
         <button className="registerButton" onClick={submitForm}>
           Create Account
@@ -73,3 +80,4 @@ export const RegistrationForm = () => {
     </body>
   );
 };
+
