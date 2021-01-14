@@ -16,6 +16,7 @@ export const RegistrationForm = () => {
   function submitForm() {
     console.log(inputs);
   }
+
   return (
     <body id="background">
       <div className="wrapper">
@@ -74,7 +75,7 @@ export const RegistrationForm = () => {
           placeholder="Password"
         />
         <button className="registerButton" onClick={submitForm}>
-          Create Account
+            Create Account
         </button>
       </div>
     </body>
