@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
 export const LoginPage = () => {
@@ -6,8 +7,10 @@ export const LoginPage = () => {
     password: '',
   });
   
-  function loginInput() {
-    console.log(inputs);
+  async function loginInput() {
+    const response = await axios.post("http://localhost:8080/login", { username: inputs.username, password: inputs.password })
+
+    console.log(response);
   }
   return (
       <div>
