@@ -5,13 +5,12 @@ export const LoginPage = () => {
     username: '',
     password: '',
   });
-
-  function login() {
+  
+  function loginInput() {
     console.log(inputs);
   }
   return (
-    <body id="background">
-      <div className="wrapper">
+      <div>
         <input
           className="input"
           value={inputs.username}
@@ -32,11 +31,10 @@ export const LoginPage = () => {
           id="password"
           placeholder="Password"
         />
-        <button className="registerButton" onClick={login}>
+        <button className="registerButton" onClick={loginInput}>
           log-in
         </button>
       </div>
-    </body>
   );
 };
 

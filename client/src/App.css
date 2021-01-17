@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+#background {
+  
+  background-image: linear-gradient(to top left, transparent, #2bae66FF), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'); 
+  background-position: center;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    margin: 4em 20em 2em 20em;
+    border-radius: 5px;
+    background-color: white;
+    
+}
+
+.input {
+  border-radius: 5px;
+  border:1px solid black;
+  margin: 10px 0 10px 0;
+  font-family: 'Patrick Hand', cursive;
+}
+
+.registerButton {
+  margin: 10px 0 10px 0;
+  border-radius: 5px;
+  border:1px solid black;
+  background-color: #2bae66FF;
   color: white;
+  font-family: 'Patrick Hand', cursive;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
