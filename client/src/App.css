@@ -11,19 +11,6 @@
   
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid black;
-    margin: 4em 20em 2em 20em;
-    border-radius: 5px;
-    background-color: white;
-    
-}
-
 .input {
   border-radius: 5px;
   border:1px solid black;
