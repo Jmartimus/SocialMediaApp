@@ -13,8 +13,8 @@ export const LoginPage = () => {
     console.log(response);
   }
   return (
-    <body>
-      <div className="wrapper">
+    <div id="background">
+      <div className="loginContainer">
         <h1 className="header">myCircle</h1>
         <input
           className="input"
@@ -24,7 +24,7 @@ export const LoginPage = () => {
           }}
           type="username"
           id="username"
-          placeholder="Username"
+          placeholder="  Username"
         />
         <input
           className="input"
@@ -34,20 +34,18 @@ export const LoginPage = () => {
           }}
           type="password"
           id="password"
-          placeholder="Password"
+          placeholder="  Password"
         />
         <button className="topButton" onClick={loginInput}>
-          log-in
+          LOG IN
         </button>
-      </div>
-      <div className="wrapper">
         <Link to="/registration">
-          <button className="bottomButton">
-            Don't have an account? Sign-up
+          <button className="loginLink">
+            No account? Sign up
           </button>
         </Link>
       </div>
-    </body>
+    </div>
   );
 };
 

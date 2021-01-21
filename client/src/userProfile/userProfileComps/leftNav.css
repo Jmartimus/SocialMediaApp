@@ -1,0 +1,31 @@
+.leftnav {
+  background-color: #02353C;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  
+}
+
+/* Style the links inside the navigation bar */
+.leftnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Change the color of links on hover */
+.leftnav a:hover {
+  background-color: #C1F6ED;
+  color: #02353C;
+}
+
+/* Add a color to the active/current link */
+.leftnav a.active {
+  background-color: #2EAF7D;
+  color: white;
+}
+/*#449342, #2EAF7D, #C1F6ED, #02353C, #3FD0C9*/

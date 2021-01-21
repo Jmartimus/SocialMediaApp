@@ -27,8 +27,8 @@ export const RegistrationForm = () => {
   }
 
   return (
-    <body>
-      <div className="wrapper">
+    <div id="background">
+      <div className="registrationContainer">
         <h1 className="header">myCircle</h1>
         <input
           className="input"
@@ -38,7 +38,7 @@ export const RegistrationForm = () => {
           }}
           type="firstname"
           id="firstname"
-          placeholder="First name"
+          placeholder="  First name"
         />
 
         <input
@@ -49,7 +49,7 @@ export const RegistrationForm = () => {
           }}
           type="lastname"
           id="lastname"
-          placeholder="Last name"
+          placeholder="  Last name"
         />
 
         <input
@@ -60,7 +60,7 @@ export const RegistrationForm = () => {
           }}
           type="email"
           id="email"
-          placeholder="Email Address"
+          placeholder="  Email Address"
         />
 
         <input
@@ -71,7 +71,7 @@ export const RegistrationForm = () => {
           }}
           type="username"
           id="username"
-          placeholder="Username"
+          placeholder="  Username"
         />
 
         <input
@@ -82,18 +82,16 @@ export const RegistrationForm = () => {
           }}
           type="password"
           id="password"
-          placeholder="Password"
+          placeholder="  Password"
         />
         <button className="topButton" onClick={registrationSubmit}>
-          Sign-up
+          SIGN UP
         </button>
-      </div>
-      <div className="wrapper">
         <Link to="/log-in">
-          <button className="bottomButton">Have an account? Log-in</button>
+          <button className="loginLink">Have an account? Log-in</button>
         </Link>
       </div>
-    </body>
+    </div>
   );
 };
 

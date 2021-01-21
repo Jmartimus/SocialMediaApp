@@ -1,50 +1,99 @@
+/*check for maybe new font.*/
+#background {
+  
+  background-image: linear-gradient(to top left, #2EAF7D, transparent, #2EAF7D), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'); 
+  background-position: center;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}
 .header {
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Roboto', sans-serif;
+  align-items: center;
+  margin: 10px;
+  color: #02353C;
+  font-size: 50px;
 }
 
-.wrapper {
+.loginContainer {
+  min-height: 25vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid black;
-    border-radius: 5px;
-    background-color: white;
-    
-}
-.input {
-  border-radius: 5px;
-  border:1px solid black;
-  margin: 10px 0 10px 0;
-  font-family: 'Patrick Hand', cursive;
-  display: flex;
-  flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.bottomButton {
-  border-radius: 5px;
-  border:1px solid black;
+  margin: auto;
+  border-radius: 20px;
   background-color: white;
-  color: black;
-  font-family: 'Patrick Hand', cursive;
-  display: block;
-  width: 100%;
-  margin: auto;
- 
+  width: 400px;
+  height: 300px;
+  text-align: center; 
+  position: relative;
+  top: 100px;
+  padding: 15px;
 }
+
+.registrationContainer {
+  min-height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 20px;
+  background-color: white;
+  width: 400px;
+  height: 500px;
+  text-align: center; 
+  position: relative;
+  top: 100px;
+  padding: 15px;
+}
+
+.input {
+  border-radius: 20px;
+  margin: 10px 0 10px 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #C1F6ED;
+  width: 300px;
+  height: 100px;
+  border-style: hidden;}
+  ::placeholder {
+    color: #2EAF7D;
+    font-size: 20px;
+  }
+
 .topButton {
-    border-radius: 5px;
-  border:1px solid black;
-  background-color: #2bae66FF;
+  border-radius: 20px;
+  background-color: #2EAF7D;
   color:white;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
   display: block;
-  width: 100%;
-  margin: auto;
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  border-style: hidden;
  
 }
+  .loginLink {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  background-color: white;
+  width: 280px;
+  text-align: center;
+  position: relative;
+  color:  #449342;
+  border-style: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  }
+  
+  /*color palette: #449342, #2EAF7D, #C1F6ED, #02353C, #3FD0C9*/ 
+
 
