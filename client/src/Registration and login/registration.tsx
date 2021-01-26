@@ -16,7 +16,7 @@ export const RegistrationForm = () => {
   });
 
   async function registrationSubmit() {
-    const response = await axios.post('http://localhost:8080/login', {
+    const response = await axios.post('http://localhost:8080/register', {
       firstName: inputs.firstName,
       lastName: inputs.lastName,
       email: inputs.email,
@@ -36,7 +36,7 @@ export const RegistrationForm = () => {
           onChange={(e) => {
             setInputs({ ...inputs, firstName: e.target.value });
           }}
-          type="firstname"
+          type="text"
           id="firstname"
           placeholder="  First name"
         />
@@ -47,7 +47,7 @@ export const RegistrationForm = () => {
           onChange={(e) => {
             setInputs({ ...inputs, lastName: e.target.value });
           }}
-          type="lastname"
+          type="text"
           id="lastname"
           placeholder="  Last name"
         />
@@ -58,7 +58,7 @@ export const RegistrationForm = () => {
           onChange={(e) => {
             setInputs({ ...inputs, email: e.target.value });
           }}
-          type="email"
+          type="text"
           id="email"
           placeholder="  Email Address"
         />
@@ -69,7 +69,7 @@ export const RegistrationForm = () => {
           onChange={(e) => {
             setInputs({ ...inputs, username: e.target.value });
           }}
-          type="username"
+          type="text"
           id="username"
           placeholder="  Username"
         />
@@ -80,7 +80,7 @@ export const RegistrationForm = () => {
           onChange={(e) => {
             setInputs({ ...inputs, password: e.target.value });
           }}
-          type="password"
+          type="text"
           id="password"
           placeholder="  Password"
         />
