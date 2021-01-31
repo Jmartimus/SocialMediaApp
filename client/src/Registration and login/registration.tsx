@@ -1,30 +1,25 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import './registration.css';
 import { Link } from 'react-router-dom';
+import { userInfoState as userInfoStateAtom } from '../Atoms';
+import { useRecoilState } from 'recoil';
 
-//make an option for sign-in and sign-up on the same page.  
-//It will only switch the middle window.
 
 export const RegistrationForm = () => {
-  const [inputs, setInputs] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    username: '',
-    password: '',
-  });
+  const [userInfo, setUserInfo] = useRecoilState(userInfoStateAtom);
 
   async function registrationSubmit() {
     const response = await axios.post('http://localhost:8080/register', {
-      firstName: inputs.firstName,
-      lastName: inputs.lastName,
-      email: inputs.email,
-      username: inputs.username,
-      password: inputs.password,
+      firstName: userInfo.firstName,
+      lastName: userInfo.lastName,
+      email: userInfo.email,
+      username: userInfo.username,
+      password: userInfo.password,
     });
     console.log(response);
   }
+
 
   return (
     <div id="background">
@@ -32,9 +27,9 @@ export const RegistrationForm = () => {
         <h1 className="header">myCircle</h1>
         <input
           className="input"
-          value={inputs.firstName}
+          value={userInfo.firstName}
           onChange={(e) => {
-            setInputs({ ...inputs, firstName: e.target.value });
+            setUserInfo({ ...userInfo, firstName: e.target.value });
           }}
           type="text"
           id="firstname"
@@ -43,9 +38,9 @@ export const RegistrationForm = () => {
 
         <input
           className="input"
-          value={inputs.lastName}
+          value={userInfo.lastName}
           onChange={(e) => {
-            setInputs({ ...inputs, lastName: e.target.value });
+            setUserInfo({ ...userInfo, lastName: e.target.value });
           }}
           type="text"
           id="lastname"
@@ -54,9 +49,9 @@ export const RegistrationForm = () => {
 
         <input
           className="input"
-          value={inputs.email}
+          value={userInfo.email}
           onChange={(e) => {
-            setInputs({ ...inputs, email: e.target.value });
+            setUserInfo({ ...userInfo, email: e.target.value });
           }}
           type="text"
           id="email"
@@ -65,9 +60,9 @@ export const RegistrationForm = () => {
 
         <input
           className="input"
-          value={inputs.username}
+          value={userInfo.username}
           onChange={(e) => {
-            setInputs({ ...inputs, username: e.target.value });
+            setUserInfo({ ...userInfo, username: e.target.value });
           }}
           type="text"
           id="username"
@@ -76,9 +71,9 @@ export const RegistrationForm = () => {
 
         <input
           className="input"
-          value={inputs.password}
+          value={userInfo.password}
           onChange={(e) => {
-            setInputs({ ...inputs, password: e.target.value });
+            setUserInfo({ ...userInfo, password: e.target.value });
           }}
           type="text"
           id="password"

@@ -1,35 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { LeftNav } from './userProfileComps/leftNav';
-import axios from 'axios';
+import { Wall } from './userProfileComps/wall';
+import { userInfoState as userInfoStateAtom } from '../Atoms';
+import { useRecoilValue } from 'recoil';
 
 export function MyPlace() {
-  const [currentInfo, setCurrentInfo] = useState('');
-
-  // async function retrieveInfo() {
-  //   const response = await axios.get('http://localhost:8080/register')
-  //     .then(res => {
-  //       setCurrentInfo(response)
-  //     });
-  //   return console.log(response.email)
-  // }
-  // useEffect(() => {
-  //   const retrieveData = async () => {
-  //     const response = await axios(
-  //       'http://localhost:8080/register'
-  //     );
-
-  //     setCurrentInfo(response.currentInfo);
-  //   }; retrieveData();
-  // }, []);
+  const myUserInfo = useRecoilValue(userInfoStateAtom);
   
+  
+
   return (
     <div>
       <div>
         <LeftNav />
+        <Wall />
       </div>
-     <h1>{currentInfo}</h1>
+      <h1>{}</h1>
     </div>
   );
-  }
+}
 
+
+//fix this
