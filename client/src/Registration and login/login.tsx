@@ -1,15 +1,21 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const LoginPage = () => {
   const [inputs, setInputs] = useState({
     username: '',
     password: '',
   });
-  
+
   async function loginInput() {
-    const response = await axios.post("http://localhost:8080/login", { username: inputs.username, password: inputs.password })
+    const response = await axios.post(
+      'http://localhost:8080/login',
+      { username: inputs.username, password: inputs.password },
+      {
+        withCredentials: true,
+      }
+    );
     console.log(response);
   }
   return (
@@ -40,12 +46,9 @@ export const LoginPage = () => {
           LOG IN
         </button>
         <Link to="/registration">
-          <button className="loginLink">
-            No account? Sign up
-          </button>
+          <button className="loginLink">No account? Sign up</button>
         </Link>
       </div>
     </div>
   );
 };
-

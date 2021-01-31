@@ -5,22 +5,26 @@ import { Link, useHistory } from 'react-router-dom';
 import { userInfoState as userInfoStateAtom } from '../Atoms';
 import { useRecoilState } from 'recoil';
 
-
 export const RegistrationForm = () => {
-  const history = useHistory()
+  const history = useHistory();
   const [userInfo, setUserInfo] = useRecoilState(userInfoStateAtom);
 
   async function registrationSubmit() {
-    const response = await axios.post('http://localhost:8080/register', {
-      firstName: userInfo.firstName,
-      lastName: userInfo.lastName,
-      email: userInfo.email,
-      username: userInfo.username,
-      password: userInfo.password,
-    });
-    history.push("/myPlace");
+    const response = await axios.post(
+      'http://localhost:8080/register',
+      {
+        firstName: userInfo.firstName,
+        lastName: userInfo.lastName,
+        email: userInfo.email,
+        username: userInfo.username,
+        password: userInfo.password,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    history.push('/myPlace');
   }
-
 
   return (
     <div id="background">
@@ -90,4 +94,3 @@ export const RegistrationForm = () => {
     </div>
   );
 };
-

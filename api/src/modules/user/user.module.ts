@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import RegistrationController from './registration.controller';
-import RegistrationService from './registration.service';
+import RegistrationController from './user.controller';
+import RegistrationService from './user.service';
 import { InMemoryDBModule } from '@nestjs-addons/in-memory-db';
 import BcryptService from 'src/services/bcrypt/bcrypt.service';
 import JwtService from 'src/services/jwt/jwt.service';
@@ -10,4 +10,4 @@ import JwtService from 'src/services/jwt/jwt.service';
   controllers: [RegistrationController],
   providers: [RegistrationService, BcryptService, JwtService],
 })
-export class RegistrationModule {}
+export class UserModule {}
