@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React from 'react';
 import './registration.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { userInfoState as userInfoStateAtom } from '../Atoms';
 import { useRecoilState } from 'recoil';
 
 
 export const RegistrationForm = () => {
+  const history = useHistory()
   const [userInfo, setUserInfo] = useRecoilState(userInfoStateAtom);
 
   async function registrationSubmit() {
@@ -17,7 +18,7 @@ export const RegistrationForm = () => {
       username: userInfo.username,
       password: userInfo.password,
     });
-    console.log(response);
+    history.push("/myPlace");
   }
 
 
@@ -75,7 +76,7 @@ export const RegistrationForm = () => {
           onChange={(e) => {
             setUserInfo({ ...userInfo, password: e.target.value });
           }}
-          type="text"
+          type="password"
           id="password"
           placeholder="  Password"
         />

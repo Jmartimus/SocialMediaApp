@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 
 //Find a way to not have a delele button already there when page renders. and fix wallposts.
-
+interface WallPost {
+   id: string;
+  title: string;
+   content: string;
+  likes: number;
+}
 
 export function Wall() {
   const [newWallPost, setNewWallPost] = useState('');
-  const [wallPosts, setWallPosts] = useState(['']);
+  const [wallPosts, setWallPosts] = useState<string[]>([]);
 
   function addToWall(post: string) {
     let newPost = post;

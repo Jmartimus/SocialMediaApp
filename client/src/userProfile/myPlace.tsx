@@ -7,6 +7,7 @@ import { useRecoilValue } from 'recoil';
 
 export function MyPlace() {
   const myUserInfo = useRecoilValue(userInfoStateAtom);
+  console.log(myUserInfo.firstName)
   
   
 
@@ -16,10 +17,7 @@ export function MyPlace() {
         <LeftNav />
         <Wall />
       </div>
-      <h1>{}</h1>
+      <h1>{myUserInfo.firstName}</h1>
     </div>
   );
 }
-
-
-//fix this

@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
 
+//if userInfoState is empty then call /me which gets the info from the API again. /me 
+
   return (
     <Router>
               <div>
