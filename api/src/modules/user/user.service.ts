@@ -10,10 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
 @Injectable()
 export default class UserService {
   private readonly logger = new Logger(UserService.name);
-  constructor(
-    private readonly userDao: InMemoryDBService<UserEntity>,
-    private readonly bcryptService: BcryptService,
-  ) {}
+  constructor(private readonly userDao: InMemoryDBService<UserEntity>) {}
 
   async getUser(id: string): Promise<UserResponse> {
     const [userEntity] = this.userDao.query(record => record.id === id);
