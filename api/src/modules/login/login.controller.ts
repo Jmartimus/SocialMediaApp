@@ -2,7 +2,6 @@ import { Body, Controller, Post, Res } from '@nestjs/common';
 import { Response, Send } from 'express';
 import AuthConstants from 'src/constants/auth.constants';
 import LoginPost from 'src/payload_objects/auth/loginPost';
-import UserResponse from 'src/payload_objects/data/UserResponse';
 import JwtService from 'src/services/jwt/jwt.service';
 import { LoginService } from './login.service';
 

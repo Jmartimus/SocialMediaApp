@@ -1,26 +1,25 @@
 import {
+  Body,
   Controller,
-  Get,
   HttpException,
   HttpStatus,
-  Logger,
+  Post,
   Req,
 } from '@nestjs/common';
 import { Request } from 'express';
 import AuthConstants from 'src/constants/auth.constants';
-import UserResponse from 'src/payload_objects/data/UserResponse';
+import NewPost from 'src/payload_objects/posts/NewPost';
 import JwtService from 'src/services/jwt/jwt.service';
-import UserService from './user.service';
+import PostsService from './posts.service';
 
-@Controller('/user')
-export default class UserController {
-  private readonly logger = new Logger(UserController.name);
+@Controller('/posts')
+export default class PostsController {
   constructor(
-    private readonly userService: UserService,
+    private readonly postsService: PostsService,
     private readonly jwtService: JwtService,
   ) {}
-  @Get('/me')
-  async getUserDetails(@Req() req: Request): Promise<UserResponse> {
+  @Post()
+  newPost(@Req() req: Request, @Body() newPost: NewPost) {
     const jwtCookie = req.cookies[AuthConstants.AUTH_COOKIE];
     if (!jwtCookie) {
       throw new HttpException(
@@ -35,13 +34,6 @@ export default class UserController {
         HttpStatus.UNAUTHORIZED,
       );
     }
-    const user = await this.userService.getUser(jwt['id']);
-    if (!user) {
-      throw new HttpException(
-        `User with id ${jwt['id']} not found`,
-        HttpStatus.NOT_FOUND,
-      );
-    }
-    return user;
+    this.postsService.createPost(newPost, jwt['id']);
   }
 }
