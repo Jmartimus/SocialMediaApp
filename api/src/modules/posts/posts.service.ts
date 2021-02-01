@@ -17,4 +17,7 @@ export default class PostsService {
     };
     this.postsDao.create(postEntity);
   }
+  getAllPostsForUser(ownerId: string): PostEntity[] {
+    return this.postsDao.query(r => r.owner === ownerId);
+  }
 }

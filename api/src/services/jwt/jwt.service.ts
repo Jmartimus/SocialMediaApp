@@ -17,12 +17,12 @@ export default class JwtService {
     return token;
   }
 
-  readJwt(token: string): object | string {
+  readJwt(token: string): object | string | null {
     try {
       return jwt.verify(token, this.MOVE_ME_TO_ENV);
     } catch (e) {
       console.error('could not verify jwt', e);
-      throw e;
+      return null;
     }
   }
 }

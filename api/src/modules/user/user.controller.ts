@@ -29,10 +29,17 @@ export default class UserController {
       );
     }
     const jwt = this.jwtService.readJwt(jwtCookie);
+    if (jwt === null) {
+      throw new HttpException(
+        'Jwt is not valid. It is likely expired',
+        HttpStatus.NOT_ACCEPTABLE,
+      );
+    }
+
     if (!jwt['id']) {
       throw new HttpException(
         'ID is missing from jwt',
-        HttpStatus.UNAUTHORIZED,
+        HttpStatus.NOT_ACCEPTABLE,
       );
     }
     const user = await this.userService.getUser(jwt['id']);
