@@ -1,4 +1,11 @@
-import { Controller, Get, Logger, Req } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Logger,
+  Req,
+} from '@nestjs/common';
 import { Request } from 'express';
 import AuthConstants from 'src/constants/auth.constants';
 import UserResponse from 'src/payload_objects/data/UserResponse';
@@ -15,8 +22,23 @@ export default class UserController {
   @Get('/me')
   async getUserDetails(@Req() req: Request): Promise<UserResponse> {
     const jwtCookie = req.cookies[AuthConstants.AUTH_COOKIE];
-    const jwt = await this.jwtService.readJwt(jwtCookie);
+    if (!jwtCookie) {
+      throw new HttpException(
+        'No authentication token',
+        HttpStatus.UNAUTHORIZED,
+      );
+    }
+    const jwt = this.jwtService.readJwt(jwtCookie);
+    if (!jwt['id']) {
+      throw new HttpException('ID is missing frm jwt', HttpStatus.UNAUTHORIZED);
+    }
     const user = await this.userService.getUser(jwt['id']);
+    if (!user) {
+      throw new HttpException(
+        `User with id ${jwt['id']} not found`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
     return user;
   }
 }

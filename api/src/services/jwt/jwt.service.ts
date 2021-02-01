@@ -17,9 +17,9 @@ export default class JwtService {
     return token;
   }
 
-  async readJwt(token: string): Promise<string> {
+  readJwt(token: string): object | string {
     try {
-      return await jwt.verify(token, this.MOVE_ME_TO_ENV);
+      return jwt.verify(token, this.MOVE_ME_TO_ENV);
     } catch (e) {
       console.error('could not verify jwt', e);
       throw e;
