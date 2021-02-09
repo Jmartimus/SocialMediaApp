@@ -19,7 +19,6 @@ function App() {
   }
 
   async function getUserInfoIfMissing() {
-    console.log('foo');
     let response: AxiosResponse;
     try {
       response = await axios.get('http://localhost:8080/user/me', {

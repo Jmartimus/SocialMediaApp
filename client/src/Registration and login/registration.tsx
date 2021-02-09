@@ -10,7 +10,7 @@ export const RegistrationForm = () => {
   const [userInfo, setUserInfo] = useRecoilState(userInfoStateAtom);
 
   async function registrationSubmit() {
-    const response = await axios.post(
+    await axios.post(
       'http://localhost:8080/register',
       {
         firstName: userInfo.firstName,

@@ -1,0 +1,11 @@
+#myPlaceBackground {
+  background-color: rgb(219, 219, 219);
+  background-position: center;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+}

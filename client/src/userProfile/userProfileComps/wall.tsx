@@ -1,21 +1,38 @@
 import React, { useState } from 'react';
+import './wall.css';
+import axios from 'axios';
 
-//Find a way to not have a delele button already there when page renders. and fix wallposts.
-interface WallPost {
-   id: string;
+interface newWallPost {
   title: string;
-   content: string;
-  likes: number;
+  body: string;
+}
+
+interface wallPostTypes {
+  title: string;
+  body: string;
 }
 
 export function Wall() {
-  const [newWallPost, setNewWallPost] = useState('');
-  const [wallPosts, setWallPosts] = useState<string[]>([]);
+  const [newWallPost, setNewWallPost] = useState<newWallPost>({
+    title: '',
+    body: '',
+  });
+  const [wallPosts, setWallPosts] = useState<wallPostTypes[]>([]);
 
-  function addToWall(post: string) {
-    let newPost = post;
-    setWallPosts([...wallPosts, newPost]);
-    setNewWallPost('');
+  async function wallPost() {
+    const response = await axios.post(
+      'http://localhost:8080/posts',
+      { title: newWallPost.title, body: newWallPost.body },
+      {
+        withCredentials: true,
+      }
+    );
+  }
+  function addToWall(post: newWallPost) {
+    let newPosts = wallPosts.concat(post);
+    setWallPosts(newPosts);
+    setNewWallPost({ title: '', body: '' });
+    alert("don't forget to find a way to add current date to posts")
   }
   function deletePost(i: number) {
     const newestPost = [...wallPosts];
@@ -24,19 +41,40 @@ export function Wall() {
   }
   return (
     <div>
-      <input
-        value={newWallPost}
-        onChange={(e) => setNewWallPost(e.target.value)}
-      />
-      <button onClick={() => addToWall(newWallPost)}>Wall post</button>
-      <ul>
-        {wallPosts.map((post, i) => (
-          <li>
-            {wallPosts}
-            <button onClick={() => deletePost(i)}>Delete</button>
-          </li>
+      <div id="wallContainer">
+        <input
+          value={newWallPost.title}
+          placeholder="  Title of your post..."
+          onChange={(e) =>
+            setNewWallPost({ title: e.target.value, body: newWallPost.body })
+          }
+          id="myPlaceWallTitle"
+          type="text"
+        />
+        <input
+          value={newWallPost.body}
+          placeholder="  Write something..."
+          onChange={(e) =>
+            setNewWallPost({ title: newWallPost.title, body: e.target.value })
+          }
+          id="myPlaceWallInput"
+          type="text"
+        />
+        <button onClick={() => addToWall(newWallPost)} id="postButton">
+          Post
+        </button>
+      </div>
+      <div>
+        {wallPosts.map((posts, i) => (
+          <div id="wallPosts">
+            <h6 id="wallPostTitles">{posts.title}</h6>
+            <h4 id="wallPostBody">{posts.body}</h4>
+            <button onClick={() => deletePost(i)} id="deleteButton">
+              Delete
+            </button>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

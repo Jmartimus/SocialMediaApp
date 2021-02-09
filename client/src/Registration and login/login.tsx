@@ -1,22 +1,36 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { userInfoState as userInfoStateAtom } from '../Atoms';
+import { useRecoilState } from 'recoil';
+import React, {useState} from 'react';
 
+
+//takes inputs and uses this info to get info back from the server.  Then it uses the info retrieved to set the global state and takes you to myPlace immediately.
 export const LoginPage = () => {
-  const [inputs, setInputs] = useState({
-    username: '',
-    password: '',
-  });
+  const history = useHistory();
+  const [, setUserInfo] = useRecoilState(userInfoStateAtom);
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
 
   async function loginInput() {
-    const response = await axios.post(
-      'http://localhost:8080/login',
-      { username: inputs.username, password: inputs.password },
-      {
-        withCredentials: true,
+    try {
+      const response = await axios.post(
+        'http://localhost:8080/login',
+        { username: userName, password: password },
+        {
+          withCredentials: true,
+        }
+      );
+      if (response.status > 399) {
+        alert('Could not log-in');
+        return;
       }
-    );
-    console.log(response);
+      setUserInfo(response.data);
+      history.push('/myPlace');
+    }
+    catch (e) {
+      alert('Could not log-in!');
+    } 
   }
   return (
     <div id="background">
@@ -24,9 +38,9 @@ export const LoginPage = () => {
         <h1 className="header">myCircle</h1>
         <input
           className="input"
-          value={inputs.username}
+          value={userName}
           onChange={(e) => {
-            setInputs({ ...inputs, username: e.target.value });
+            setUserName(e.target.value);
           }}
           type="username"
           id="username"
@@ -34,9 +48,9 @@ export const LoginPage = () => {
         />
         <input
           className="input"
-          value={inputs.password}
+          value={password}
           onChange={(e) => {
-            setInputs({ ...inputs, password: e.target.value });
+            setPassword(e.target.value);
           }}
           type="password"
           id="password"
