@@ -8,7 +8,6 @@ import './myPlace.css';
 
 export function MyPlace() {
   const myUserInfo = useRecoilValue(userInfoStateAtom);
-  console.log(myUserInfo.firstName)
   
   
 
