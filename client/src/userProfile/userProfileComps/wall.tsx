@@ -32,7 +32,7 @@ export function Wall() {
   async function wallPost() {
     const response = await axios.post(
       'http://localhost:8080/posts',
-      { title: newWallPost.title, body: newWallPost.body },
+      { poster: newWallPost.poster, title: newWallPost.title, body: newWallPost.body, time: newWallPost.time },
       {
         withCredentials: true,
       }
@@ -46,11 +46,12 @@ export function Wall() {
       }
     );
     console.log(response)
+    setWallPosts(response.data)
     }
   
   async function addToWall(post: newWallPost) {
     let newPosts = wallPosts.concat(post);
-    setWallPosts(newPosts);
+    // setWallPosts(newPosts);
     await wallPost();
     await getUsersPosts();
     setNewWallPost({ poster: '', title: '', body: '', time: ''});
