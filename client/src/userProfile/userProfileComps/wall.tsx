@@ -38,10 +38,21 @@ export function Wall() {
       }
     );
   }
+  async function getUsersPosts() {
+    const response = await axios.get(
+      'http://localhost:8080/posts/all',
+      {
+        withCredentials: true,
+      }
+    );
+    console.log(response)
+    }
   
-  function addToWall(post: newWallPost) {
+  async function addToWall(post: newWallPost) {
     let newPosts = wallPosts.concat(post);
     setWallPosts(newPosts);
+    await wallPost();
+    await getUsersPosts();
     setNewWallPost({ poster: '', title: '', body: '', time: ''});
   }
 
