@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 @Injectable()
 export default class PostsService {
   constructor(private readonly postsDao: InMemoryDBService<PostEntity>) {}
+
   createPost(newPost: NewPost, owner: string) {
     const postEntity: PostEntity = {
       id: uuidv4(),
@@ -17,7 +18,17 @@ export default class PostsService {
     };
     this.postsDao.create(postEntity);
   }
+
   getAllPostsForUser(ownerId: string): PostEntity[] {
     return this.postsDao.query(r => r.owner === ownerId);
+  }
+
+  deleteById(id: string, ownerId: string): boolean {
+    const post = this.postsDao.get(id);
+    if (post.owner !== ownerId) {
+      return false;
+    }
+    this.postsDao.delete(id);
+    return true;
   }
 }
