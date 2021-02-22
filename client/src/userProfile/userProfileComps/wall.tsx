@@ -6,16 +6,16 @@ import { useRecoilValue } from 'recoil';
 
 interface newWallPost {
   poster: string;
+  time: string;
   title: string;
   body: string;
-  time: string;
 }
 
 interface wallPostTypes {
   poster: string;
+  time: string;
   title: string;
   body: string;
-  time: string;
 }
 
 export function Wall() {
@@ -23,16 +23,16 @@ export function Wall() {
   const fullName = myUserInfo.firstName + " " + myUserInfo.lastName;
   const [newWallPost, setNewWallPost] = useState<newWallPost>({
     poster: '',
+    time: '',
     title: '',
     body: '',
-    time: '',
   });
   const [wallPosts, setWallPosts] = useState<wallPostTypes[]>([]);
 
   async function wallPost() {
-    const response = await axios.post(
+    await axios.post(
       'http://localhost:8080/posts',
-      { title: newWallPost.title, body: newWallPost.body },
+      { poster: newWallPost.poster, time: newWallPost.time, title: newWallPost.title, body: newWallPost.body },
       {
         withCredentials: true,
       }
@@ -46,15 +46,19 @@ export function Wall() {
       }
     );
     console.log(response)
+    setWallPosts(response.data)
     }
   
   async function addToWall(post: newWallPost) {
-    let newPosts = wallPosts.concat(post);
-    setWallPosts(newPosts);
     await wallPost();
     await getUsersPosts();
-    setNewWallPost({ poster: '', title: '', body: '', time: ''});
+    setNewWallPost({ poster: '', time: '', title: '', body: ''});
   }
+
+  // async function editPost() {
+  //   await getUsersPosts();
+  //   setNewWallPost({ poster: '', time: '', title: '', body: '' });
+  // }
 
   function deletePost(i: number) {
     const newestPost = [...wallPosts];
@@ -71,9 +75,9 @@ export function Wall() {
           onChange={(e) =>
             setNewWallPost({
               poster: fullName,
+              time: newWallPost.time,
               title: e.target.value,
               body: newWallPost.body,
-              time: newWallPost.time,
             })
           }
           id="myPlaceWallTitle"
@@ -85,14 +89,14 @@ export function Wall() {
           onChange={(e) => {
             setNewWallPost({
               poster: fullName,
-              title: newWallPost.title,
-              body: e.target.value,
               time: new Date().toLocaleString('default', {
                 month: 'long',
                 day: '2-digit',
                 hour: '2-digit',
                 minute: '2-digit',
               }),
+              title: newWallPost.title,
+              body: e.target.value,
             });
           }}
           id="myPlaceWallInput"
@@ -105,10 +109,14 @@ export function Wall() {
       <div>
         {wallPosts.map((posts, i) => (
           <div id="wallPosts">
-            <h5>{posts.poster}</h5>
+            <h6 id="wallPosterName">{posts.poster}Your name will go here</h6>
+            <h6 id="timeStamp">Posted at {posts.time} "time"</h6>
+            <span id="line"></span>
             <h5 id="wallPostTitles">{posts.title}</h5>
             <h4 id="wallPostBody">{posts.body}</h4>
-            <h6>Posted at {posts.time}</h6>
+            {/* <button onClick={() => editPost()} id="editButton">
+              Edit Post
+            </button> */}
             <button onClick={() => deletePost(i)} id="deleteButton">
               Delete
             </button>

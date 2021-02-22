@@ -13,7 +13,7 @@ export function MyPlace() {
 
   return (
     <div id="myPlaceBackground">
-      <h1>Welcome back to myCircle,  
+      <h1 id="welcome">Welcome back to myCircle,  
          {myUserInfo.firstName} {myUserInfo.lastName}
       </h1>
       <div>
