@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { LeftNav } from './userProfileComps/leftNav';
 import { Wall } from './userProfileComps/wall';
-import { userInfoState as userInfoStateAtom } from '../Atoms';
+import { userInfoState as userInfoStateAtom } from '../recoil/Atoms';
 import { useRecoilValue } from 'recoil';
 import './myPlace.css';
 

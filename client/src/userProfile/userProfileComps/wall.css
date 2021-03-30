@@ -1,92 +1,154 @@
 #wallContainer {
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 720px;
   height: 23vh;
   background-color: whitesmoke;
   margin-top: -200px;
-  margin-left: 365px;;
+  margin-left: 365px;
 }
 
-#myPlaceWallTitle {
+#wallContainer #myPlaceWallTitle {
   width: 30%;
   height: 30px;
-  text-align: left; 
+  text-align: left;
   position: relative;
   border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
-  background-color: #C1F6ED;
+  font-family: "Roboto", sans-serif;
+  background-color: #dbdbdb;
   border-style: hidden;
   margin-top: 10px;
-margin-left: -475px;
-margin-bottom: 10px;}
-  ::placeholder {
-    color: #2EAF7D;
-    font-size: 15px;
+  margin-left: -475px;
+  margin-bottom: 10px;
 }
-#myPlaceWallInput {
+
+#wallContainer #myPlaceWallTitle:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+#wallContainer ::-webkit-input-placeholder {
+  color: #02353C;
+  font-size: 15px;
+}
+
+#wallContainer :-ms-input-placeholder {
+  color: #02353C;
+  font-size: 15px;
+}
+
+#wallContainer ::-ms-input-placeholder {
+  color: #02353C;
+  font-size: 15px;
+}
+
+#wallContainer ::placeholder {
+  color: #02353C;
+  font-size: 15px;
+}
+
+#wallContainer #myPlaceWallInput {
   border-radius: 20px 20px 20px 20px;
   width: 695px;
   height: 100px;
-  text-align: start; 
+  text-align: start;
   position: relative;
   font-family: 'Roboto', sans-serif;
-  background-color: #C1F6ED;
-  border-style: hidden;}
-  #myPlaceWallInput::placeholder {
-    color: #2EAF7D;
-    font-size: 15px;
-    text-align: start;
+  background-color: #dbdbdb;
+  border-style: hidden;
 }
 
-#wallPosts{
+#wallContainer #myPlaceWallInput:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+#wallContainer #myPlaceWallInput::-webkit-input-placeholder {
+  color: #02353C;
+  font-size: 15px;
+  text-align: start;
+}
+
+#wallContainer #myPlaceWallInput:-ms-input-placeholder {
+  color: #02353C;
+  font-size: 15px;
+  text-align: start;
+}
+
+#wallContainer #myPlaceWallInput::-ms-input-placeholder {
+  color: #02353C;
+  font-size: 15px;
+  text-align: start;
+}
+
+#wallContainer #myPlaceWallInput::placeholder {
+  color: #02353C;
+  font-size: 15px;
+  text-align: start;
+}
+
+#wallPosts {
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 720px;
   background-color: whitesmoke;
   margin-top: 30px;
   margin-left: 365px;
-  
-} 
-
-#wallPosterName {
-  font-family: 'Roboto', sans-serif;
-  margin: 10px 10px 0px 10px;
-  font-size: 14px;  
 }
 
-#timeStamp{
-  font-family: 'Roboto', sans-serif;
+#wallPosterName {
+  font-family: "Roboto", sans-serif;
+  margin: 10px 10px 0px 10px;
+  font-size: 14px;
+}
+
+#timeStamp {
+  font-family: "Roboto", sans-serif;
   margin: 0px 10px 10px 10px;
-  font-size: 10px;  
+  font-size: 10px;
 }
 
 #line {
-  border-bottom: 2px solid rgb(219, 219, 219);
-display:block;}
-
-#wallPostTitles{
-font-family: 'Roboto', sans-serif;
-margin: 10px 10px 0px 10px;
-  font-size: 16px;  
+  border-bottom: 2px solid #dbdbdb;
+  display: block;
 }
 
-#wallPostBody{
-font-family: 'Roboto', sans-serif;
-margin: 10px 10px 0px 10px;
-font-size: 14px;
-word-wrap: break-word;  
-}  
+#wallPostTitles {
+  font-family: "Roboto", sans-serif;
+  margin: 10px 10px 0px 10px;
+  font-size: 16px;
+}
+
+#wallPostBody {
+  font-family: "Roboto", sans-serif;
+  margin: 10px 10px 0px 10px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
 
 #postButton {
   border-radius: 20px;
-  background-color: #2EAF7D;
-  color:white;
-  font-family: 'Roboto', sans-serif;
+  background-color: #2eaf7d;
+  color: white;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   width: 700px;
   margin: 10px 10px 10px 10px;
@@ -94,10 +156,17 @@ word-wrap: break-word;
   border-style: hidden;
   text-align: center;
 }
-#editButton {border-radius: 20px;
-  background-color: #2EAF7D;
-  color:white;
-  font-family: 'Roboto', sans-serif;
+
+#postButton:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+#editButton {
+  border-radius: 20px;
+  background-color: #2eaf7d;
+  color: white;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   width: 100px;
   height: 30px;
@@ -106,10 +175,16 @@ word-wrap: break-word;
   text-align: center;
 }
 
-#deleteButton {border-radius: 20px;
-  background-color: #2EAF7D;
-  color:white;
-  font-family: 'Roboto', sans-serif;
+#editButton:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+#deleteButton {
+  border-radius: 20px;
+  background-color: #2eaf7d;
+  color: white;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   width: 100px;
   height: 30px;
@@ -117,3 +192,9 @@ word-wrap: break-word;
   border-style: hidden;
   text-align: center;
 }
+
+#deleteButton:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+/*# sourceMappingURL=wall.css.map */

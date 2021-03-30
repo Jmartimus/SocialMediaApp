@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './wall.css';
 import axios from 'axios';
-import { userInfoState as userInfoStateAtom } from '../../Atoms';
+import { userInfoState as userInfoStateAtom } from '../../recoil/Atoms';
 import { useRecoilValue } from 'recoil';
 
 interface newWallPost {

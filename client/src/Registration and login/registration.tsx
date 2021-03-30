@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import './registration.css';
 import { Link, useHistory } from 'react-router-dom';
-import { userInfoState as userInfoStateAtom } from '../Atoms';
+import { userInfoState as userInfoStateAtom } from '../recoil/Atoms';
 import { useRecoilState } from 'recoil';
 
 export const RegistrationForm = () => {

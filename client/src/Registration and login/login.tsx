@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
-import { userInfoState as userInfoStateAtom } from '../Atoms';
+import { userInfoState as userInfoStateAtom } from '../recoil/Atoms';
 import { useRecoilState } from 'recoil';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import './registration.css';
 
 
 //takes inputs and uses this info to get info back from the server.  Then it uses the info retrieved to set the global state and takes you to myPlace immediately.

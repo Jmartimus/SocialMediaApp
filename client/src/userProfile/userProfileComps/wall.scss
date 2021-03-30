@@ -1,0 +1,139 @@
+@import '../../styles/variables';
+
+#wallContainer {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 720px;
+  height: 23vh;
+  background-color:$primaryBackground;
+  margin-top: -200px;
+  margin-left: 365px;
+  #myPlaceWallTitle {
+    width: 30%;
+    height: 30px;
+    text-align: left;
+    position: relative;
+    border-radius: 20px;
+    font-family: $primaryFont;
+    background-color: rgb(219, 219, 219);
+    border-style: hidden;
+    margin-top: 10px;
+    margin-left: -475px;
+    margin-bottom: 10px;
+    &:hover {
+       filter: brightness(120%)
+    }
+  }
+  ::placeholder {
+    color: #02353C;
+    font-size: 15px;
+  }
+  #myPlaceWallInput {
+    border-radius: 20px 20px 20px 20px;
+    width: 695px;
+    height: 100px;
+    text-align: start;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(219, 219, 219);
+    border-style: hidden;
+    &:hover {
+       filter: brightness(120%)
+    }
+  }
+  #myPlaceWallInput::placeholder {
+    color: #02353C;
+    font-size: 15px;
+    text-align: start;
+  }
+}
+
+#wallPosts {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 720px;
+  background-color: $primaryBackground;
+  margin-top: 30px;
+  margin-left: 365px;
+}
+
+#wallPosterName {
+  font-family: $primaryFont;
+  margin: 10px 10px 0px 10px;
+  font-size: 14px;
+}
+
+#timeStamp {
+  font-family: $primaryFont;
+  margin: 0px 10px 10px 10px;
+  font-size: 10px;
+}
+
+#line {
+  border-bottom: 2px solid rgb(219, 219, 219);
+  display: block;
+}
+
+#wallPostTitles {
+  font-family: $primaryFont;
+  margin: 10px 10px 0px 10px;
+  font-size: 16px;
+}
+
+#wallPostBody {
+  font-family: $primaryFont;
+  margin: 10px 10px 0px 10px;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+#postButton {
+  border-radius: 20px;
+  background-color: $wallBtnTextBackgroundColor;
+  color: $wallBtnTextColor;
+  font-family: $primaryFont;
+  font-size: 20px;
+  width: 700px;
+  margin: 10px 10px 10px 10px;
+  height: 30px;
+  border-style: hidden;
+  text-align: center;
+  &:hover {
+     filter: brightness(120%)
+  }
+}
+#editButton {
+  border-radius: 20px;
+  background-color: $wallBtnTextBackgroundColor;
+  color: $wallBtnTextColor;
+  font-family: $primaryFont;
+  font-size: 20px;
+  width: 100px;
+  height: 30px;
+  margin: 10px 10px -40px 500px;
+  border-style: hidden;
+  text-align: center;
+  &:hover {
+    filter: brightness(120%)
+  }
+}
+
+#deleteButton {
+  border-radius: 20px;
+  background-color: $wallBtnTextBackgroundColor;
+  color: $wallBtnTextColor;
+  font-family: $primaryFont;
+  font-size: 20px;
+  width: 100px;
+  height: 30px;
+  margin: 10px 10px 10px 610px;
+  border-style: hidden;
+  text-align: center;
+  &:hover {
+     filter: brightness(120%)
+  }
+}

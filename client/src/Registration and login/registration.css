@@ -1,7 +1,6 @@
-/*check for maybe new font.*/
 #background {
-
-  background-image: linear-gradient(to top left, #2EAF7D, transparent, #2EAF7D), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80'); 
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#2EAF7D), color-stop(transparent), to(#2EAF7D)), url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80");
+  background-image: linear-gradient(to top left, #2EAF7D, transparent, #2EAF7D), url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80");
   background-position: center;
   min-width: 100%;
   min-height: 100%;
@@ -9,11 +8,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
 }
+
 .header {
   font-family: 'Roboto', sans-serif;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 10px;
   color: #02353C;
   font-size: 50px;
@@ -21,16 +22,25 @@
 
 .loginContainer {
   min-height: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
   border-radius: 20px;
   background-color: white;
   width: 400px;
   height: 300px;
-  text-align: center; 
+  text-align: center;
   position: relative;
   top: 100px;
   padding: 15px;
@@ -38,16 +48,25 @@
 
 .registrationContainer {
   min-height: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
   border-radius: 20px;
   background-color: white;
   width: 400px;
   height: 500px;
-  text-align: center; 
+  text-align: center;
   position: relative;
   top: 100px;
   padding: 15px;
@@ -57,19 +76,49 @@
   border-radius: 20px;
   margin: 10px 0 10px 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #C1F6ED;
   width: 300px;
   height: 100px;
-  border-style: hidden;}
-  ::placeholder {
-    color: #2EAF7D;
-    font-size: 20px;
-  }
+  border-style: hidden;
+  color: #2EAF7D;
+  font-size: 20px;
+  background-color: #C1F6ED;
+  padding-left: 10px;
+}
+
+.input:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+.input:focus {
+  background-color: #2EAF7D;
+  color: whitesmoke;
+}
+
+::-webkit-input-placeholder {
+  color: #2EAF7D;
+  font-size: 20px;
+}
+
+:-ms-input-placeholder {
+  color: #2EAF7D;
+  font-size: 20px;
+}
+
+::-ms-input-placeholder {
+  color: #2EAF7D;
+  font-size: 20px;
+}
+
+::placeholder {
+  color: #2EAF7D;
+  font-size: 20px;
+}
 
 .topButton {
   border-radius: 20px;
   background-color: #2EAF7D;
-  color:white;
+  color: whitesmoke;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   display: block;
@@ -77,23 +126,39 @@
   height: 150px;
   margin: 10px;
   border-style: hidden;
- 
 }
-  .loginLink {
+
+.topButton:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+.loginLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
   background-color: white;
   width: 280px;
   text-align: center;
   position: relative;
-  color:  #02353C;
+  color: #02353C;
   border-style: hidden;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
-  }
-  
-  /*color palette: #449342, #2EAF7D, #C1F6ED, #02353C, #3FD0C9*/ 
+}
 
+.loginLink:hover {
+  -webkit-filter: brightness(130%);
+          filter: brightness(130%);
+}
 
+/*color palette: #449342, #2EAF7D, #C1F6ED, #02353C, #3FD0C9*/
+/*# sourceMappingURL=registration.css.map */

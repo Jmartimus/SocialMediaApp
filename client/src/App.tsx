@@ -5,7 +5,7 @@ import { LoginPage } from './Registration and login/login';
 import { MyPlace } from './userProfile/myPlace';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { userInfoState as userInfoStateAtom } from './Atoms';
+import { userInfoState as userInfoStateAtom } from './recoil/Atoms';
 import axios, { AxiosResponse } from 'axios';
 
 function App() {
