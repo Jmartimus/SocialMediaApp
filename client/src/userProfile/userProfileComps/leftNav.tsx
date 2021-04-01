@@ -5,7 +5,7 @@ import './leftNav.css';
 enum Page {
   MY_PLACE,
   MY_FRIENDS,
-  MY_POSTS,
+  MY_CHAT,
   MY_PICTURES,
   MY_VIDEOS,
 }
@@ -30,13 +30,6 @@ export function LeftNav() {
             myFriends
           </a>
           <a
-            className={active === Page.MY_POSTS ? 'active' : 'btn'}
-            href="#posts"
-            onClick={() => setActive(Page.MY_POSTS)}
-          >
-            myPosts
-          </a>
-          <a
             className={active === Page.MY_PICTURES ? 'active' : 'btn'}
             href="#pictures"
             onClick={() => setActive(Page.MY_PICTURES)}
@@ -49,6 +42,13 @@ export function LeftNav() {
             onClick={() => setActive(Page.MY_VIDEOS)}
           >
             myVideos
+          </a>
+          <a
+            className={active === Page.MY_CHAT ? 'active' : 'btn'}
+            href="#chat"
+            onClick={() => setActive(Page.MY_CHAT)}
+          >
+            myChat
           </a>
         </div>
       </div>

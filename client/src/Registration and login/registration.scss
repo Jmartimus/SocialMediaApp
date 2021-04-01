@@ -64,19 +64,27 @@
   border-style: hidden;
   color: $midgreen;
   font-size: 20px;
-  background-color: #C1F6ED;
+  background-color: $lightgreen;
   padding-left: 10px;
   &:hover {
   filter: brightness(120%)
   }
   &:focus {
-      background-color: #2EAF7D;
+      background-color: $midgreen;
       color: $white;
     }}
   ::placeholder {
     color: $midgreen;
     font-size: 20px;
     }
+.input:autofill {
+      background-color: $lightgreen;
+      color: blue;
+    }
+input:-webkit-autofill {
+  box-shadow: 0 0 0 30px $lightgreen inset !important;
+  -webkit-text-fill-color: $midgreen !important;
+}
 
 .topButton {
   border-radius: 20px;

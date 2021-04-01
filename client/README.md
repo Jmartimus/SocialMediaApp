@@ -46,5 +46,13 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 //git pull when starting app
-//cd into client, yarn start 
+//cd into client, yarn start
 //cd .., git add . , git commit -m "message", git push
+
+//I am writing desires for this app and I will delete as I make updates.
+-figure out how to put all api calls in 1 file.
+-change navigation to middle of screen.
+-possibly change color scheme to a more current (darker scheme)
+-clean up css of app starting with the variables file and importing into other scss files
+-get wall finished and move on to making the profile page look good.
+-start working on friends component -> then pics -> then videos -> then chat.

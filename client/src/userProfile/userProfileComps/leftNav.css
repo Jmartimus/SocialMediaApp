@@ -7,7 +7,6 @@
   border-radius: 0px 20px 20px 0px;
 }
 
-/* Style the links inside the navigation bar */
 .leftnav a {
   color: white;
   padding: 14px 16px;
@@ -18,13 +17,11 @@
   border-radius: 0px, 20px, 20px, 0px;
 }
 
-/* Change the color of links on hover */
 .leftnav a:hover {
   background-color:#C1F6ED;
   color: #02353C;
 }
 
-/* Add a color to the active/current link */
 .leftnav a.active {
   background-color:  #2EAF7D;
   color: #02353C;
